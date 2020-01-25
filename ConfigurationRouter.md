@@ -197,6 +197,8 @@ bridge=br0
 ...
 ```
 
+sudo /usr/sbin/hostapd /etc/hostapd/hostapd.conf
+
 Now reboot the Raspberry Pi.
 
 There should now be a functioning bridge between the wireless LAN and the Ethernet connection on the Raspberry Pi, and any device associated with the Raspberry Pi access point will act as if it is connected to the access point's wired Ethernet.
