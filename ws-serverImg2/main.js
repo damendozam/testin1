@@ -2,7 +2,7 @@ const WebSocket = require('ws');
 const fs = require('fs');
 var NodeWebcam = require( "node-webcam" );
 var Gpio = require('onoff').Gpio;
-//var pushButton = new Gpio(2, 'in', 'both');
+var pushButton = new Gpio(2, 'in', 'both');
 
 var opts = {
  
@@ -109,34 +109,40 @@ const interval = setInterval(function ping() {
   });
 }, 30000);
 
-/*pushButton.watch(function (err, value) { //Watch for hardware interrupts on pushButton GPIO, specify callback function
+pushButton.watch(function (err, value) { //Watch for hardware interrupts on pushButton GPIO, specify callback function
   if (err) { //if an error
     console.error('There was an error', err); //output error message to console
   return;
   }
   //LED.writeSync(value); //turn LED on or off depending on the button state (0 or 1)
-  if(!value){
+  if(value){
     console.log('Enciende');
     wss.clients.forEach(function each(ws) {
       //if (ws.isAlive === false) return ws.terminate();
-      NodeWebcam.capture( "test_picture", opts, function( err, data ) {
-        ws.send(data, {binary: true},function (err) {
-        
-          console.log('Imagen enviada!');
-        
-        });
-      });
+	setTimeout(function(){
+      		console.log('.');
+		NodeWebcam.capture( "test_picture", opts, function( err, data ) {
+       
+				console.log('capturado');
+				ws.send(data, {binary: true},function (err) {
+	        
+          				console.log('Imagen enviada!');
+	        
+        			});
+	
+      		});
+	}, 2000);
       //ws.isAlive = false;
       //ws.ping(noop);
     });
   }
   //else console.log('Apaga');
-});*/
+});
 
-/*function unexportOnClose() { //function to run when exiting program
+function unexportOnClose() { //function to run when exiting program
   //LED.writeSync(0); // Turn LED off
   //LED.unexport(); // Unexport LED GPIO to free resources
   pushButton.unexport(); // Unexport Button GPIO to free resources
-};*/
+};
 
-//process.on('SIGINT', unexportOnClose);
+process.on('SIGINT', unexportOnClose);
