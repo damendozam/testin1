@@ -1,0 +1,2 @@
+{"processing_time":90.014,"results":[{"box":{"ymin":302,"xmin":291,"ymax":340,"xmax":389},"plate":"hxq582","region":{"score":0.616,"code":"co"},"vehicle":{"score":0.874,"box":{"ymin":47,"xmin":132,"ymax":374,"xmax":541},"type":"Car"},"score":0.903,"candidates":[{"score":0.903,"plate":"hxq582"},{"score":0.762,"plate":"hxq5b2"}],"dscore":0.717}],"filename":"21_53_bimageTest2.jpg","version":1,"camera_id":null,"timestamp":"2020-03-05T21:53:35.215158Z"}
+
