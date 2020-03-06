@@ -1,0 +1,2 @@
+{"processing_time":227.771,"results":[{"box":{"ymin":286,"xmin":276,"ymax":329,"xmax":360},"plate":"8168amh","region":{"score":0.769,"code":"us"},"vehicle":{"score":0.257,"box":{"ymin":34,"xmin":67,"ymax":419,"xmax":557},"type":"Car"},"score":0.894,"candidates":[{"score":0.894,"plate":"8168amh"}],"dscore":0.697}],"filename":"15_22_bg_usb_inf.jpg","version":1,"camera_id":null,"timestamp":"2020-03-06T15:22:01.248339Z"}
+
