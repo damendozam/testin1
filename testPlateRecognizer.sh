@@ -1,5 +1,5 @@
 #curl -o car.jpg https://app.platerecognizer.com/static/demo.jpg
-curl -F "upload=@g_usb_inf.jpg" -F regions=us \
+curl -F "upload=@2020-03-04_165656_963.jpg" -F regions=us \
 -H "Authorization: Token bf32501f4a38c52dbe1dd344c38d1335f33481ef" \
 http://api.platerecognizer.com/v1/plate-reader
 echo "\n"

@@ -3,14 +3,15 @@ const fs = require('fs');
 var NodeWebcam = require( "node-webcam" );
 var Gpio = require('onoff').Gpio;
 var pushButton = new Gpio(2, 'in', 'both');
+//var exec = require('child_process').exec;
 
 var opts = {
  
     //Picture related
  
-    width: 1280,
+    width: 800,
  
-    height: 720,
+    height: 600,
  
     quality: 100,
  
@@ -121,7 +122,7 @@ pushButton.watch(function (err, value) { //Watch for hardware interrupts on push
       //if (ws.isAlive === false) return ws.terminate();
 	setTimeout(function(){
       		console.log('.');
-		NodeWebcam.capture( "test_picture", opts, function( err, data ) {
+		/*NodeWebcam.capture( "test_picture", opts, function( err, data ) {
        
 				console.log('capturado');
 				ws.send(data, {binary: true},function (err) {
@@ -130,8 +131,25 @@ pushButton.watch(function (err, value) { //Watch for hardware interrupts on push
 	        
         			});
 	
-      		});
-	}, 2000);
+      		});*/
+		exec("raspistill -t 200 -o imageRPi.jpg", function(err, stdout, stderr) {
+    			//exec("C:/Users/deuts/Downloads/openalpr_64/alpr.exe y_0_r_0.jpg", function(err, stdout, stderr) {
+        		console.log(stdout);
+        		//console.log(err);
+    		});
+		fs.readFile('./imageRPi.jpg', function (err, buffer) {
+    			console.log('Imagen cargada!');
+
+    			ws.send(buffer, {binary: true},function (err) {
+    
+      				console.log('Imagen enviada!');
+    
+    			});
+
+  		});
+
+
+	}, 500);
       //ws.isAlive = false;
       //ws.ping(noop);
     });
