@@ -1,0 +1,3 @@
+pi@raspberrypi:~/testin1 $ sh testPlateRecognizer.sh 
+{"processing_time":142.153,"results":[{"box":{"ymin":286,"xmin":276,"ymax":329,"xmax":359},"plate":"8168awh","region":{"score":0.7,"code":"us"},"vehicle":{"score":0.257,"box":{"ymin":34,"xmin":67,"ymax":419,"xmax":557},"type":"Car"},"score":0.886,"candidates":[{"score":0.886,"plate":"8168awh"},{"score":0.777,"plate":"8168amh"}],"dscore":0.697}],"filename":"22_01_bg_usb_inf.jpg","version":1,"camera_id":null,"timestamp":"2020-03-09T22:01:57.511480Z"}
+
