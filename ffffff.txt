@@ -1,0 +1,2 @@
+{"processing_time":93.964,"results":[{"box":{"ymin":168,"xmin":223,"ymax":277,"xmax":437},"plate":"8168amh","region":{"score":0.569,"code":"us"},"vehicle":{"score":0.375,"box":{"ymin":23,"xmin":24,"ymax":416,"xmax":597},"type":"Car"},"score":0.833,"candidates":[{"score":0.833,"plate":"8168amh"},{"score":0.812,"plate":"8168awh"}],"dscore":0.797}],"filename":"18_53_baa.jpg","version":1,"camera_id":null,"timestamp":"2020-03-09T18:53:24.738592Z"}
+
